@@ -1,4 +1,5 @@
-﻿using Starcounter;
+﻿using AppLibrary;
+using Starcounter;
 using System;
 
 namespace App {
@@ -10,6 +11,10 @@ namespace App {
     public class Program {
         static void Main(string[] args) {
             Db.Transact(() => {
+                new Person() {
+                    FirstName = "Per",
+                    LastName = "Samuelsson"
+                };
                 new Started() { Time = DateTime.UtcNow };
             });
         }
