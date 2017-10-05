@@ -25,6 +25,27 @@ namespace App.Tests {
             host = h;
         }
 
+        public void Transact(Action action) {
+            RunOnScheduler(() => Db.Transact(action));
+        }
+
+        public void RunOnScheduler(Action action) {
+            Exception taskException = null;
+
+            Scheduling.ScheduleTask(() => {
+                try {
+                    action();
+                }
+                catch (Exception ex) {
+                    taskException = ex;
+                }
+            }, true);
+
+            if (taskException != null) {
+                throw taskException;
+            }
+        }
+
         void IDisposable.Dispose() {
             host.Dispose();
         }

@@ -41,6 +41,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(StarcounterBin)\Starcounter.Hosting.dll</HintPath>
     </Reference>
+    <Reference Include="Starcounter.Internal, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d2df1e81d0ca3abf, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(StarcounterBin)\Starcounter.Internal.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -71,6 +75,10 @@
     <Compile Include="TestPrerequisites.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AppLibrary\AppLibrary.csproj">
+      <Project>{bf5cd225-3ea2-4536-8d01-832d27f5cbaf}</Project>
+      <Name>AppLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App\App.csproj">
       <Project>{0e475795-3e95-4191-9e5c-572239981d16}</Project>
       <Name>App</Name>
