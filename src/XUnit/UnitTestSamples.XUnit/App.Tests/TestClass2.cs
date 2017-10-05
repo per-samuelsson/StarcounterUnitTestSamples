@@ -2,7 +2,9 @@
 using Xunit;
 
 namespace App.Tests {
-    public class TestClass2 {
+    
+    public class TestClass2 : ContextualTest {
+        
         [Fact]
         public void Test1() {
 
