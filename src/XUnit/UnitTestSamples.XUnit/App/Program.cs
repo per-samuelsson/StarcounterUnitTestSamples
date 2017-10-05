@@ -7,7 +7,7 @@ namespace App {
         public DateTime Time { get; set; }
     }
 
-    class Program {
+    public class Program {
         static void Main(string[] args) {
             Db.Transact(() => {
                 new Started() { Time = DateTime.UtcNow };
